@@ -1,0 +1,60 @@
+<%= form_for(@quote, local: true) do |form| %>
+  <% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+        <% @quote.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.text_field :product_price, class: 'form-control', placeholder: 'Valor de la mercaderia en USD' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :shipping_us, class: 'form-control', placeholder: 'Shipping en USD' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.number_field :product_weight, class: 'form-control', placeholder: 'Peso en LB' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.collection_select :category_id, @categories, :id, :name, 
+                  {selected: @quote.category_id, include_blank: false, :prompt => "Selecciona categoria del producto"},
+                  {class: "form-control"} %>
+  </div>
+
+  <div class="form-check">
+    <%= form.label 'ShiperBox compra por ti?'%>
+    <%= form.label 'Si'%>
+    <%= form.radio_button :shiperbox_buy, true%>
+    <%= form.label 'No', false%>
+    <%= form.radio_button :shiperbox_buy, false%>
+  </div>
+
+  <div class="form-check">
+    <%= form.label 'Deseas servicio a domicilio?'%>
+    <%= form.label 'Si'%>
+    <%= form.radio_button :home_service, true%>
+    <%= form.label 'No', false%>
+    <%= form.radio_button :home_service, false%>
+  </div>
+
+  <div class="form-group">
+    <% opciones = [['Capital', 40.00], ['Departamental',50.00], ['Recoger en oficina',0.0]]%>
+    <%= form.select(:home_service_option, opciones, {:prompt => "Selecciona una opcion de envio"}, class: 'form-control', include_blank: false)%>
+  </div>
+
+  <div class="form-group">
+    <%= form.url_field :link, class: 'form-control', placeholder: 'Pega el link del producto' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Cotizar Ahora', class: 'btn-quote'%>
+  </div>
+<% end %>

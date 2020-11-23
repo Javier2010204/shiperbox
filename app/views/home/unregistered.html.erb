@@ -1,0 +1,55 @@
+<div class="container text-center full-height">
+    <div class="row h-100 d-flex align-items-center">
+        <div class="col-sm-6 col-md-8">
+            <%= image_tag 'gift', class:'image-landing' %>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <h1 class="black-text">ShiperBox</h1>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla et eius vero eveniet alias beatae dolore nostrum debitis eum accusantium odit distinctio atque magnam, impedit minima vitae reiciendis necessitatibus error?</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid gray align-items-center text-center p-4">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7">
+            <p class="gray-light-text text-medium">Si tienes alguna duda escribenos en Facebook Messenger</p>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <%= link_to 'Enviar mensaje', "https://www.facebook.com/shiperbox/", class: 'btn btn-lg orange' %>
+        </div>
+    </div>
+</div>
+<div class="container text-center full-height">
+    <div class="row h-100 d-flex align-items-center top-space">
+        <div class="col-sm-6 col-md-8">
+            <%= image_tag 'box', class:'image-landing' %>
+        </div>
+        <div class="col-sm-6 col-md-4 ">
+            <h1 class="black-text">Cotiza ahora</h1>
+            <p class="text-justify">Ingresa los datos sobre el producto que deseas cotizar</p>
+            <div class="top-space">
+                <%= render 'quotes/form'%>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container text-center full-height" style:'border-top: 1px solid black'>
+    <div class="row h-100 d-flex align-items-center">
+        <div class="col-sm-6 col-md-8">
+            <%= image_tag 'ubication', class:'image-landing' %>
+        </div>
+        <div class="col-sm-6 col-md-4 ">
+            <h1 class="black-text">Ratrea tu pedido</h1>
+            <div class="top-space">
+               <%= form_tag("home/search", method: :get, remote: true, class: 'form-inline') do %>
+                    <div class="form-group mr-2">
+                        <%= text_field_tag :code, nil, class: 'form-control', placeholder: '# codigo de paquete'%>
+                    </div>
+                    <%= content_tag(:button, type: 'submit', class: 'btn purple white-text') do %>
+                        Rastrear
+                    <% end %>
+               <% end %>
+            </div>
+        </div>
+    </div>
+</div>

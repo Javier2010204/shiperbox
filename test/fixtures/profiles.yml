@@ -1,0 +1,51 @@
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id                    :integer          not null, primary key
+#  name                  :string           default("Mi usuario ShiperBox")
+#  phone                 :integer
+#  birthday              :date
+#  nit                   :string
+#  tax_residence         :string
+#  business_name         :string
+#  address               :string
+#  delivery_instructions :text
+#  contact_name1         :string
+#  contact_phone1        :integer
+#  contact_name2         :string
+#  contact_phone2        :integer
+#  user_id               :integer          not null
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#
+
+one:
+  name: MyString
+  phone: 1
+  birthday: 2020-11-13
+  nit: MyString
+  tax_residence: MyString
+  business_name: MyString
+  address: MyString
+  delivery_instructions: MyText
+  contact_name1: MyString
+  contact_phone1: 1
+  contact_name2: MyString
+  contact_phone2: 1
+  user: one
+
+two:
+  name: MyString
+  phone: 1
+  birthday: 2020-11-13
+  nit: MyString
+  tax_residence: MyString
+  business_name: MyString
+  address: MyString
+  delivery_instructions: MyText
+  contact_name1: MyString
+  contact_phone1: 1
+  contact_name2: MyString
+  contact_phone2: 1
+  user: two

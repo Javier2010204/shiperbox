@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: quotes
+#
+#  id                  :integer          not null, primary key
+#  code                :integer
+#  product_price       :decimal(12, 8)
+#  shipping_us         :decimal(12, 8)
+#  product_weight      :integer          default(1)
+#  category            :string
+#  shiperbox_buy       :boolean          default(FALSE)
+#  home_service        :boolean          default(TRUE)
+#  home_service_option :decimal(12, 8)
+#  link                :string
+#  total               :decimal(12, 8)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  category_id         :integer
+#
+
+one:
+  product_price: 9.99
+  shipping_us: 9.99
+  product_weight: 1
+  category: MyString
+  shiperbox_buy: false
+  home_service: false
+  home_service_option: 9.99
+  link: MyString
+  total: 9.99
+
+two:
+  product_price: 9.99
+  shipping_us: 9.99
+  product_weight: 1
+  category: MyString
+  shiperbox_buy: false
+  home_service: false
+  home_service_option: 9.99
+  link: MyString
+  total: 9.99

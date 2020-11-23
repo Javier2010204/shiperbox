@@ -1,0 +1,26 @@
+$colors:(
+    purple: #7B56D9,
+    orange: #FF934F,
+	white: #FFFFFF,
+	black: #3D3E40,
+	gray: #797C7F,
+    gray-light: #FAFAFA,
+    gray-dark: #595959,
+	green-default: green
+);
+
+@each $color, $value in $colors{
+	.#{$color}{
+		background-color: $value !important;
+	}
+
+	.#{$color}-text{
+		color: $value !important;
+	}
+
+	.#{$color}-outline{
+		border: 1px solid #{$value};
+		color: $value;
+		padding: 10px 15px;
+	}
+}

@@ -1,0 +1,7 @@
+<% if current_user.admin %> 
+    <%= render 'index-admin' %>
+<% else %> 
+    <%= render 'index-client'%>
+<% end %>
+
+

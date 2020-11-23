@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id          :integer          not null, primary key
+#  price_cents :integer
+#  price       :decimal(8, 2)
+#  cost_cents  :integer
+#  cost        :decimal(8, 2)
+#  total_cents :integer
+#  total       :decimal(8, 2)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  price_cents: 1
+  price: 9.99
+  cost_cents: 1
+  cost: 9.99
+  total_cents: 1
+  total: 9.99
+
+two:
+  price_cents: 1
+  price: 9.99
+  cost_cents: 1
+  cost: 9.99
+  total_cents: 1
+  total: 9.99

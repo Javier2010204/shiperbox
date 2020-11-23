@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: categories
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  dai        :decimal(, )
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  name: MyString
+  dai: 9.99
+
+two:
+  name: MyString
+  dai: 9.99

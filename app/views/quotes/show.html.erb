@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <div class="row h-100 d-flex align-items-center card">
+    <div class="col-xs-12 col-sm-10 col-md-6 top-space">
+      <h1>Tu cotización</h1>
+      <div class="container top-space">
+        <h3 class="text-medium gray-text text-justify">Valor de Mercaderia</h3>
+        <p class="text-medium black-text text-center font-weight-bold"><%= number_to_currency(@quote.valor_mercaderia, unit:"$")%></p>
+        <h3 class="text-medium gray-text text-justify">Servicios ShiperBox</h3>
+        <p class="text-medium black-tex text-center font-weight-bold"><%= number_to_currency(@quote.servicios_shiperbox, unit:"$")%></p>
+        <h3 class="text-medium gray-text text-justify">Impuestos</h3>
+        <p class="text-medium black-text text-center font-weight-bold"><%= number_to_currency(@quote.impuestos, unit:"$")%></p>
+        <h3 class="big-text gray-text text-justify">Total</h3>
+        <p class="big-text black-text text-center font-weight-bold"><%= number_to_currency(@quote.total,unit:"$")%></p>
+        <h3 class="gray-text text-justify">Total en quetzales</h3>
+        <p class="black-text text-medium text-center font-weight-bold"><%= number_to_currency(@quote.convert_total, unit:"Q")%></p>
+      </div>
+    </div>
+    <%= link_to 'Volver al Inicio', root_path, class: 'btn-quote' %>
+  </div>
+</div>

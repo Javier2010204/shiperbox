@@ -1,0 +1,44 @@
+<%= form_tag("home/search", method: :get, remote: true) do %>
+  <div class="form-group">
+    <%= text_field_tag :product_name, nil, class: "form-control", placeholder: "Valor de la mercaderia en USD" %>
+  </div>
+  <div class="form-group">
+    <%= text_field_tag :product_name, nil, class: "form-control", placeholder: "Shipping en USD" %>
+  </div>
+  <div class="form-group">
+    <%= text_field_tag :product_name, nil, class: "form-control", placeholder: "Peso en LB" %>
+  </div>
+  <div class="form-group">
+      <select id="inputState" class="form-control">
+        <option selected>Descripcion del producto</option>
+        <option>Accesorios Deportivos</option>
+        <option>Accesorios y Equipo Médico</option>
+        <option>Agenda Electrónica (Tablet, Ipad, etc.)</option>
+        <option>Cámara Fotográfica Digital y Video</option>
+        <option>Computadoras y Partes (No Cables o Cámaras)</option>
+        <option>Calculadoras</option>
+        <option>Electrodomésticos</option>
+        <option>Empaques</option>
+        <option>Equipo de Laboratorio</option>
+        <option>Herramientas de Mano</option>
+        <option>Juguetes</option>
+        <option>Lámparas de Mesa</option>
+        <option>Lentes de Contacto</option>
+        <option>Lentes de Sol</option>
+        <option>Libros</option>
+        <option>Linternas</option>
+        <option>Maletines o Bolsones</option>
+        <option>Relojes de Pulsera</option>
+        <option>Reproductores MP3 y IPODs</option>
+        <option>Repuestos para Vehículo (Motor)</option>
+        <option>Repuestos para Vehículo (Accesorios)</option>
+        <option>Ropa</option>
+        <option>Teléfonos (celulares y de casa)</option>
+        <option>Videojuegos</option>
+        <option>Zapatos</option>
+      </select>
+    </div>
+  <%= content_tag(:button, type: 'submit', class: 'btn btn-lg purple btn-block white-text') do %>
+    Cotizar
+  <% end %>
+<% end %>
