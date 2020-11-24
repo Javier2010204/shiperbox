@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap.scss";
 
 .image-landing{
     height: 500px;
@@ -7,6 +7,10 @@
 
 .text-medium{
     font-size: 22px;
+}
+
+.top-space{
+    margin-top: 2em;
 }
 
 .btn-quote{
