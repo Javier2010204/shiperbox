@@ -23,6 +23,5 @@ import 'css/colors'
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
-global.$ = jQuery;
 
 const images = require.context('../images', true)
