@@ -1,7 +1,7 @@
 <div class="container text-center full-height">
     <div class="row h-100 d-flex align-items-center">
         <div class="col-sm-6 col-md-8">
-            
+            <%= image_pack_tag "media/images/gift.png", class: 'image-landing' %>
         </div>
         <div class="col-sm-6 col-md-4">
             <h1 class="black-text">ShiperBox</h1>
@@ -22,7 +22,7 @@
 <div class="container text-center full-height">
     <div class="row h-100 d-flex align-items-center top-space">
         <div class="col-sm-6 col-md-8">
-            
+            <%= image_pack_tag "media/images/box.png", class: 'image-landing' %>
         </div>
         <div class="col-sm-6 col-md-4 ">
             <h1 class="black-text">Cotiza ahora</h1>
@@ -36,11 +36,9 @@
 <div class="top-space container text-center full-height" style:'border-top: 1px solid black'>
     <div class="row h-100 d-flex align-items-center">
         <div class="col-sm-6 col-md-8">
-        </div>
-        <div class="col-sm-6 col-md-4 ">
-            <h1 class="black-text">Ratrea tu pedido</h1>
+        <h1 class="black-text">Ratrea tu pedido</h1>
             <div class="top-space">
-               <%= form_tag("home/search", method: :get, remote: true, class: 'form-inline') do %>
+               <%= form_tag("home/search", method: :get, remote: true, class: 'form-inline justify-content-center') do %>
                     <div class="form-group mr-2">
                         <%= text_field_tag :code, nil, class: 'form-control', placeholder: '# codigo de paquete'%>
                     </div>
@@ -49,6 +47,9 @@
                     <% end %>
                <% end %>
             </div>
+        </div>
+        <div class="col-sm-6 col-md-4 ">
+            <%= image_pack_tag "media/images/ubication.png", class: 'image-landing' %>
         </div>
     </div>
 </div>
