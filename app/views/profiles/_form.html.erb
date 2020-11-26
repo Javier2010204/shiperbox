@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
+    <%= form.date_select :birthday, :order => [:day, :month, :year], :start_year => 1970, :end_year => Time.now.year - 18 %>
   </div>
 
   <div class="field">

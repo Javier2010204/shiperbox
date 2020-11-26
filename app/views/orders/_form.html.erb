@@ -1,0 +1,56 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label 'codigo' %>
+    <%= form.number_field :code, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :product_price, class: 'form-control', placeholder: 'Valor de la mercaderia en USD' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :shipping_us, class: 'form-control', placeholder: 'Shipping en USD' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.number_field :product_weight, class: 'form-control', placeholder: 'Peso en LB' %>
+  </div>
+
+  <div class="form-check">
+    <%= form.label 'ShiperBox compra por ti?'%>
+    <%= form.label 'Si'%>
+    <%= form.radio_button :shiperbox_buy, true%>
+    <%= form.label 'No', false%>
+    <%= form.radio_button :shiperbox_buy, false%>
+  </div>
+
+  <div class="form-group">
+    <%= form.url_field :link, class: 'form-control', placeholder: 'Pega el link del producto' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.collection_select :category_id, @categories, :id, :name, {selected: @order.category_id, include_blank: false, :prompt => "Seleccione una categoria"}%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'opcion de servicio a domicilio' %>
+    <% opciones = [['Capital', 40.00],['Departamento', 50.00],['Recoger en oficinas', 0.00]]%>
+    <%= form.select(:home_service, opciones, {:prompt => "seleccione su opcion de envio" }, class: 'form-control', include_blank: false)%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

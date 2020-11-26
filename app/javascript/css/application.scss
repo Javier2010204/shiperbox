@@ -1,5 +1,13 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
+html, body{
+    background-color: #FFFF;
+}
+
+.big-top-space{
+    margin-top: 3em;
+}
+
 .image-landing{
     height: 500px;
     width: 500px;

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   before_action :set_category, only:[:unregistered]
 
   def index
+    @profile = current_user.profile
   end
   
   def unregistered

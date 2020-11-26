@@ -15,6 +15,7 @@
 #  total               :decimal(12, 8)
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  category_id         :integer
 #
 class Quote < ApplicationRecord
     belongs_to :category

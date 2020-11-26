@@ -1,0 +1,58 @@
+<p>
+  <strong>Code:</strong>
+  <%= @order.code %>
+  pp
+</p>
+
+<p>
+  <strong>Product price:</strong>
+  <%= @order.product_price %>
+</p>
+
+<p>
+  <strong>Shipping us:</strong>
+  <%= @order.shipping_us %>
+</p>
+
+<p>
+  <strong>Product weight:</strong>
+  <%= @order.product_weight %>
+</p>
+
+<p>
+  <strong>Shiperrbox buy:</strong>
+  <%= @order.shiperrbox_buy %>
+</p>
+
+<p>
+  <strong>Home service:</strong>
+  <%= @order.home_service %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @order.link %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= number_to_currency(@order.total,unit:"$")%>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @order.category_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user.email %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

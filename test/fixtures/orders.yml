@@ -1,0 +1,45 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id             :integer          not null, primary key
+#  code           :integer
+#  product_price  :decimal(8, 2)    default(0.0)
+#  shipping_us    :decimal(8, 2)    default(0.0)
+#  product_weight :integer          default(1)
+#  shiperrbox_buy :boolean          default(TRUE)
+#  home_service   :decimal(8, 2)    default(0.0)
+#  link           :string
+#  total          :decimal(8, 2)    default(0.0)
+#  status         :string
+#  category_id    :integer          not null
+#  user_id        :integer          not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+one:
+  code: 1
+  product_price: 9.99
+  shipping_us: 9.99
+  product_weight: 1
+  shiperrbox_buy: false
+  home_service: 9.99
+  link: MyString
+  total: 9.99
+  status: MyString
+  category: one
+  user: one
+
+two:
+  code: 1
+  product_price: 9.99
+  shipping_us: 9.99
+  product_weight: 1
+  shiperrbox_buy: false
+  home_service: 9.99
+  link: MyString
+  total: 9.99
+  status: MyString
+  category: two
+  user: two

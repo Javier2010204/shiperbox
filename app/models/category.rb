@@ -10,4 +10,5 @@
 #
 class Category < ApplicationRecord
     has_many :quotes
+    has_many :orders
 end

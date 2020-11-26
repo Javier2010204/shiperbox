@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_023938) do
+ActiveRecord::Schema.define(version: 2020_11_25_154717) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.decimal "dai"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "code"
+    t.decimal "product_price", precision: 8, scale: 2, default: "0.0"
+    t.decimal "shipping_us", precision: 8, scale: 2, default: "0.0"
+    t.integer "product_weight", default: 1
+    t.boolean "shiperrbox_buy", default: true
+    t.decimal "home_service", precision: 8, scale: 2, default: "0.0"
+    t.string "link"
+    t.decimal "total", precision: 8, scale: 2, default: "0.0"
+    t.string "status"
+    t.integer "category_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_orders_on_category_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -80,5 +98,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_023938) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "categories"
+  add_foreign_key "orders", "users"
   add_foreign_key "profiles", "users"
 end

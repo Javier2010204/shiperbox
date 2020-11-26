@@ -1,0 +1,25 @@
+
+
+  <tbody>
+  <h1>Pedidos</h1>
+    <% @orders.each do |order| %>
+      <div class="top-space card">
+        <p>codigo</p>
+        <p><%= order.code %></p>
+        <p>link</p>
+        <p><%= order.link %></p>
+        <p>total</p>
+        <p><%= number_to_currency(order.total, unit:"$") %></p>
+        <p>total en quetzales</p>
+        <p><%= number_to_currency(order.convert_total, unit:"Q") %></p>
+        <p>status</p>
+        <p><%= order.status %></p>
+        <%= link_to 'ver detalles', order %>
+      </div>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
