@@ -1,0 +1,47 @@
+<div class="row card align-items-center large-padding top-space">
+    <div class="col-xs-10 col-md-6">
+        <div class="row align-items-center align-middle">
+            <div class="col-xs-12 col-sm-4">
+                <h3 class="small-text gray-text no-margin">Codigo:</h3>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <p class="medium-text black-text text-justify font-weight-bold"><%= order.code %></p>
+            </div>
+        </div>
+        <div class="row align-items-center align-middle">
+            <div class="col-xs-12 col-sm-4">
+                <h3 class="small-text gray-text no-margin">Link:</h3>
+            </div>
+            <div class="col-xs-12 col-sm-8 text-justify">
+                <%= link_to order.link, order.link, class: 'small-text text-justify' %>
+            </div>
+        </div>
+        <div class="row align-items-center align-middle">
+            <div class="col-xs-12 col-sm-4">
+                <h3 class="small-text gray-text no-margin">Estado:</h3>
+            </div>
+            <div class="col-xs-12 col-sm-8 text-justify">
+                <%= order.status %>
+            </div>
+        </div>
+        <div class="row align-items-center align-middle">
+            <div class="col-xs-12 col-sm-4">
+                <h3 class="small-text gray-text no-margin">Total:</h3>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <p class="big-text black-text text-justify font-weight-bold"><%= number_to_currency(order.total, unit:"$") %></p>
+                <span class="gray-text text-justify"><%= number_to_currency(order.convert_total, unit:"Q") %></span>
+            </div>
+        </div>
+        <div class="row align-items-center align-middle top-space">
+            <div class="col-xs-12 col-sm-4">
+                link de factura
+            </div>
+            <% if order.may_confirm?%>
+                <div class="col-xs-12 col-sm-8">
+                    <%= link_to 'Pedir', order_path(order, estado: "1"), method: :put %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

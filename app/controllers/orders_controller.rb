@@ -42,8 +42,14 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+
     respond_to do |format|
       if @order.update(order_params)
+        if params[:estado] == "1"
+          @order.confirm!
+        else params[:estado] == "0"
+          puts "otro metodo"
+        end
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
@@ -76,6 +82,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:code, :product_price, :shipping_us, :product_weight, :shiperrbox_buy, :home_service, :link, :total, :status, :category_id, :user_id)
+      params.permit(:code, :product_price, :shipping_us, :product_weight, :shiperrbox_buy, :home_service, :link, :total, :status, :category_id, :user_id)
     end
 end

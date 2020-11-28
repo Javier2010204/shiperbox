@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def index
     @profile = current_user.profile
+    @orders = current_user.orders
   end
   
   def unregistered

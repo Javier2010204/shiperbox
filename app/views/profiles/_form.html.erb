@@ -11,72 +11,67 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
+  <div class="form-group">
+    <%= form.label 'Nombre' %>
     <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.number_field :phone %>
+  <div class="form-group">
+    <%= form.label 'Numero de telefono' %>
+    <%= form.number_field :phone, class: 'form-control', placeholder: '12345678' %>
   </div>
 
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.date_select :birthday, :order => [:day, :month, :year], :start_year => 1970, :end_year => Time.now.year - 18 %>
+  <div class="form-group">
+    <%= form.label 'Fecha de nacimiento' %>
+    <%= form.date_select :birthday, :order => [:day, :month, :year], :start_year => 1970, :end_year => Time.now.year - 18, class: 'custom-control-input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :nit %>
-    <%= form.text_field :nit %>
+  <div class="form-group">
+    <%= form.label 'Numero de NIT' %>
+    <%= form.text_field :nit, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :tax_residence %>
-    <%= form.text_field :tax_residence %>
+  <div class="form-group">
+    <%= form.label 'Domicilio fiscal' %>
+    <%= form.text_field :tax_residence, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :business_name %>
-    <%= form.text_field :business_name %>
+  <div class="form-group">
+    <%= form.label 'Nombre o razon social' %>
+    <%= form.text_field :business_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+  <div class="form-group">
+    <%= form.label 'Direccion de entrega' %>
+    <%= form.text_field :address, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :delivery_instructions %>
-    <%= form.text_area :delivery_instructions %>
+  <div class="form-group">
+    <%= form.label 'instrucciones para la entrega' %>
+    <%= form.text_area :delivery_instructions, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :contact_name1 %>
-    <%= form.text_field :contact_name1 %>
+  <div class="form-group">
+    <%= form.label 'Nombre del contacto 1 para entrega' %>
+    <%= form.text_field :contact_name1, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :contact_phone1 %>
-    <%= form.number_field :contact_phone1 %>
+  <div class="form-group">
+    <%= form.label 'Numero de telefono del contacto 1 para entrega' %>
+    <%= form.number_field :contact_phone1, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :contact_name2 %>
-    <%= form.text_field :contact_name2 %>
+  <div class="form-group">
+    <%= form.label 'Nombre del contacto 2 para entrega' %>
+    <%= form.text_field :contact_name2, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :contact_phone2 %>
-    <%= form.number_field :contact_phone2 %>
+  <div class="form-group">
+    <%= form.label 'Numero de telefono del contacto 1 para entrega' %>
+    <%= form.number_field :contact_phone2, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions top-space">
+    <%= form.submit 'Guardar', class: 'btn purple white-text btn-block' %>
   </div>
 <% end %>

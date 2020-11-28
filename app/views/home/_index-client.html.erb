@@ -1,15 +1,14 @@
+<% if current_user.profile%>
+    <%= link_to 'Crear mi perfil para servicio a domicilio', new_profile_path %>
+<% end %>
 <div class="container text-center">
     <div class="row d-flex align-items-center">
         <div class="col-xs-12 col-sm-10 col-md-10">
-            <h1 class="text-center">Bienvenido a ShiperBox</h1>
-            <% if current_user.profile.nil?%>
-                <%= link_to 'Crear mi perfil para servicio a domicilio', new_profile_path %>
-            <%else%>
-                <%= link_to 'Perfil', @profile%>
-            <% end %>
-            <p>
-                <%= link_to 'Ver mis pedidos', orders_path %>
-            </p>
+            <div class="top-space">
+                <h1 class="title-text">Mis Pedidos ShiperBox</h1>
+            </div>
+            <%= render @orders%>
         </div>
     </div>
 </div>
+

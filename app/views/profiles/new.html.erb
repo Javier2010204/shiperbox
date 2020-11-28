@@ -1,9 +1,16 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12">
-            <h1>Editar mi perfil</h1>
-            <%= render 'form', profile: @profile %>
+        <div class="col-xs-12 col-sm-10 col-md-4">
+            <div class="login-cover">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-8">
+            <div class="profile-container">
+                <h1 class="text-center">Mi Perfil</h1>
+                <%= render 'form', profile: @profile %>
+            </div>
         </div>
     </div>
 </div>
+
 
