@@ -9,12 +9,16 @@
       <li class="nav-item active">
          <% if user_signed_in? %>
           <%= link_to 'cerrar sesion', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          
+          <% unless current_user.profile.nil? %>
+            <%= link_to 'Mi perfil', profile_path(current_user.profile.id) , class: 'nav-link' %>
+          <% end %>
         <% else %>
           <%= link_to 'Iniciar Sesion', new_user_session_path, class: 'nav-link' %>
         <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,6 +26,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
+          <%= link_to "Cotizar",new_order_path, class: "dropdown-item" %>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>

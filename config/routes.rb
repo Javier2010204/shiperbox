@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root to: "home#index"
-    resources :quotes, only: [:index, :edit, :update]
+    resources :quotes
     resources :categories
-    resources :profiles, only:[:update, :show, :new, :create, :edit]
+    resources :profiles, only:[:update, :show, :new, :create, :edit, :index]
     resources :orders
   end
 
