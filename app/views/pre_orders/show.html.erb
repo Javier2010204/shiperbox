@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tracking:</strong>
+  <%= @pre_order.tracking_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pre_order.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_pre_order_path(@pre_order) %> |
+<%= link_to 'Back', pre_orders_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pre Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tracking</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pre_orders.each do |pre_order| %>
+      <tr>
+        <td><%= pre_order.tracking_id %></td>
+        <td><%= pre_order.user_id %></td>
+        <td><%= link_to 'Show', pre_order %></td>
+        <td><%= link_to 'Edit', edit_pre_order_path(pre_order) %></td>
+        <td><%= link_to 'Destroy', pre_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pre Order', new_pre_order_path %>

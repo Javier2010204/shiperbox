@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pre_orders
   resources :products
   get 'home/calculate'
   get 'home/index'
