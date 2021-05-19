@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  resources :buys
+  resources :guides
   resources :pre_orders
   resources :products
   get 'home/calculate'
   get 'home/index'
   get 'home/search', as: :search
+  get 'search/create'
+  get 'search/index'
+  get 'search/show'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

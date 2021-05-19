@@ -1,0 +1,5 @@
+<% @guides.each do |guide|%>
+    <p><%= guide.id %></p>
+    <p><%= guide.tacking %></p>
+    <p><%= guide.user.email %></p>
+<% end %>

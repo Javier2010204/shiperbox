@@ -20,6 +20,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders
+  has_many :guides
+  has_many :buys
+
+  validates :name, presence: true
 
   has_one :profile
 end

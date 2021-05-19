@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_154938) do
+ActiveRecord::Schema.define(version: 2021_05_15_145413) do
+
+  create_table "buys", force: :cascade do |t|
+    t.string "sender"
+    t.string "tracking"
+    t.string "code"
+    t.string "status"
+    t.string "description"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_buys_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.decimal "dai"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "guides", force: :cascade do |t|
+    t.string "tacking"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_guides_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -106,6 +126,8 @@ ActiveRecord::Schema.define(version: 2021_01_27_154938) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "buys", "users"
+  add_foreign_key "guides", "users"
   add_foreign_key "orders", "categories"
   add_foreign_key "orders", "users"
   add_foreign_key "pre_orders", "users"

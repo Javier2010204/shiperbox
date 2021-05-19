@@ -1,0 +1,27 @@
+<h1>Detalle del pedido</h1>
+
+<% if @pedidos.count == 0%>
+    <p>Codigo invalido</p>
+<%else%>
+    <% @pedidos.each do |pedido|%>
+        <% if pedido.in_miami? %>
+            <span>En Miami</span>
+        <% elsif pedido.in_transit? %>
+            <span>En transito</span>
+        <% elsif pedido.in_warehouse_gt? %>
+            <span>En bodega Guate</span>
+        <% elsif pedido.delivered? %>
+            <span>Entregado</span>
+        <% end %>
+
+        <p>
+        <strong>Tracking:</strong>
+            <%= pedido.tracking %>
+        </p>
+
+        <p>
+        <strong>Code:</strong>
+            <%= @pedido.code %>
+        </p>
+    <%end%>
+<%end%>

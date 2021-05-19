@@ -1,0 +1,8 @@
+<%= form_tag "/search/create", method: :get do %>
+    <%= text_field_tag :keyword, nil, placeholder: "Ingrese el codigo a rastrear" %>
+    <%= content_tag :button, type: :submit  do %>
+        Buscar
+    <%end%>
+<% end %>
+<div id="resultados">
+</div>

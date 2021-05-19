@@ -1,0 +1,42 @@
+<%= form_with(model: buy, local: true) do |form| %>
+  <% if buy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(buy.errors.count, "error") %> prohibited this buy from being saved:</h2>
+
+      <ul>
+        <% buy.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Remitente" %>
+    <%= form.text_field :sender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tracking %>
+    <%= form.text_field :tracking %>
+  </div>
+
+  <div class="field">
+    <%= form.label "codigo" %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label "descripcion" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Usuario" %>
+    <%= form.collection_select :user_id, @users, :id, :name, {selected: @buy.user_id, include_blank: false, :prompt=>"Seleccione a un usuario"}%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

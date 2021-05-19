@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @buy.sender %>
+</p>
+
+<p>
+  <strong>Tracking:</strong>
+  <%= @buy.tracking %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @buy.code %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  
+  <% if @buy.in_miami? %>
+    <span>En Miami</span>
+  <% elsif @buy.in_transit? %>
+    <span>En transito</span>
+  <% elsif @buy.in_warehouse_gt? %>
+    <span>En bodega Guate</span>
+  <% elsif @buy.delivered? %>
+    <span>Entregado</span>
+  <% end %>
+  
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @buy.description %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @buy.user.email %>
+</p>
+
+
+<% if @buy.may_to_transit? %>
+  <%= link_to 'cambiar a: en transito', buy_path(@buy, state:"0"), method: :patch %>
+<% elsif @buy.may_to_warehouse? %>
+  <%= link_to 'cambiar a: en bodega GT', buy_path(@buy, state:"1"), method: :patch %>
+<% elsif @buy.may_to_home? %>
+  <%= link_to 'cambiar a: en entregado', buy_path(@buy, state:"2"), method: :patch %>
+<% end %>
+
+<div class="actions" style="margin-to:1em;">
+  <%= link_to 'Editar', edit_buy_path(@buy) %> |
+  <%= link_to 'Back', buys_path %>
+</div>

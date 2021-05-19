@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tacking:</strong>
+  <%= @guide.tacking %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @guide.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_guide_path(@guide) %> |
+<%= link_to 'Back', guides_path %>

@@ -16,7 +16,17 @@
                 <div class="top-space">
                     <h1 class="title-text">Mis Pedidos ShiperBox</h1>
                 </div>
-                <%= render @orders%>
+                
+                <% if @buys.nil? %>
+                    <p>Espera a que se te asigne un paquete</p>
+                <% else %>
+                    <%= render @buys%>
+                <% end %>
+                <%= link_to 'Agregar nueva compra', new_guide_path %>
+                <br>
+                <%= link_to 'cotizar', new_guide_path %>
+                <br>
+                <%= link_to 'rastrear paquete', new_guide_path %>
             </div>
         </div>
     </div>

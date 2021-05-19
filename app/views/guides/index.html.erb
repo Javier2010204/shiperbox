@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Guides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tracking</th>
+      <th>User</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guides.each do |guide| %>
+      <tr>
+        <td><%= guide.tacking %></td>
+        <td><%= guide.user.name%></td>
+        <td><%= guide.user.email%></td>
+        <td><%= link_to 'Ver', guide %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guide', new_guide_path %>
