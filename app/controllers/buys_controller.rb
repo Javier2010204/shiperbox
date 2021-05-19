@@ -84,7 +84,7 @@ class BuysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def buy_params
-      params.permit(:sender, :tracking, :code, :status, :description, :user_id)
+      params.require(:buy).permit(:sender, :tracking, :code, :status, :description, :user_id)
     end
 
 end

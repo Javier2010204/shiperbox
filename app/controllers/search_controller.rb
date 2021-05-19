@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-
+    before_action :set_categories
     def create
         codigo = params[:keyword]
 
@@ -17,6 +17,16 @@ class SearchController < ApplicationController
     def show
         @pedidos = Buy.where("code = ?", codigo)
     end
+
+    def quotes
+        @quote = Quote.new        
+    end
+
+    def set_categories
+        @categories = Category.all
+    end
+    
+    
     
     
     
